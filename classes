@@ -1,0 +1,44 @@
+import math
+import sys
+class Point:
+    
+    x = 0.0
+    y = 0.0
+    
+    def __init__(self, a, b):
+        self.x = a
+        self.y = b
+        
+    def getx(self):
+        return self.x
+        
+    def gety(self):
+        return self.y
+        
+    def __repr__(self):
+        return "(" + str(self.x) + ", " + str(self.y) + ")"
+        
+    def distance(self, g):
+        return math.sqrt(((self.x - g.x)**2 + (self.y - g.y)**2))
+    
+
+p = Point(3.4, 1.6)
+arrPoints = [Point(1,2), Point(3,5), Point(4,6), Point(1,3), Point(5,9)]
+
+#print arrPoints[0].distance(arrPoints[1])
+
+minDist = sys.float_info.max
+p1 = 0
+p2 = 0
+
+for i in range(5):
+    for j in range(i+1 , 5):
+        d = arrPoints[i].distance(arrPoints[j])
+        if d < minDist:
+            minDist = d
+            p1 = i
+            p2 = j
+            
+print minDist
+print arrPoints[p1]
+print arrPoints[p2]

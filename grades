@@ -1,0 +1,17 @@
+
+def myGrade(g):
+    if g >= 90:
+        return "A"
+    if g >= 80:
+        return "B"
+    if g >= 70:
+        return "C"
+    if g >= 60:
+        return "D"
+    return "F"
+    
+
+
+
+gd = raw_input("Grade: ")
+print myGrade(int(gd))
